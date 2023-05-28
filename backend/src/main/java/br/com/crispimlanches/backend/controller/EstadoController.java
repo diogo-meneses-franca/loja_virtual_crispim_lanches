@@ -14,8 +14,13 @@ public class EstadoController {
     private EstadoService estadoService;
 
     @PostMapping
-    public Estado inserir(Estado estado){
+    public Estado inserir(@RequestBody Estado estado){
         return estadoService.inserir(estado);
+    }
+
+    @PutMapping
+    public Estado editar(@RequestBody Estado estado){
+        return estadoService.editar(estado);
     }
 
     @DeleteMapping("/{id}")
@@ -23,9 +28,6 @@ public class EstadoController {
         estadoService.excluir(id);
      }
 
-     public Estado alterar(Estado estado){
-        return estadoService.alterar(estado);
-     }
     @GetMapping
      public List<Estado> listarTodos(){
         return estadoService.listarTodos();

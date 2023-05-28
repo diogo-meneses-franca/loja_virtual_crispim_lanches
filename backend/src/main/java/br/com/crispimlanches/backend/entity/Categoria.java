@@ -5,18 +5,15 @@ import lombok.Data;
 
 import java.util.Date;
 @Entity
-@Table(name = "estado")
+@Table(name = "categoria")
 @Data
-public class Estado {
+public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    private String sigla;
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
-
 }
