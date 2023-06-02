@@ -1,11 +1,13 @@
 package br.com.crispimlanches.backend.controller;
 
+import br.com.crispimlanches.backend.dto.CidadeDTO;
 import br.com.crispimlanches.backend.entity.Cidade;
 import br.com.crispimlanches.backend.service.CidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @RestController
 @RequestMapping("/cidade")
@@ -29,8 +31,8 @@ public class CidadeController {
     }
 
     @GetMapping
-    public List<Cidade> listarTodos(){
-        return cidadeService.listarTodos();
+    public Page<CidadeDTO> listarTodos(Pageable pageable){
+        return cidadeService.listarTodos(pageable);
     }
 
 }

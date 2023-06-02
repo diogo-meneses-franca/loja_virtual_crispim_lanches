@@ -11,9 +11,12 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
 }

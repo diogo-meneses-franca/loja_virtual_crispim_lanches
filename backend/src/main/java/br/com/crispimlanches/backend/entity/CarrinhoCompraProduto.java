@@ -1,22 +1,26 @@
 package br.com.crispimlanches.backend.entity;
 
-import br.com.crispimlanches.backend.dto.EstadoDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigInteger;
 import java.util.Date;
+
 @Entity
-@Table(name = "estado")
 @Data
-public class Estado {
+@Table(name = "carrinhoCompraProduto")
+public class CarrinhoCompraProduto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
-    private String sigla;
+
+    private BigInteger valor;
+    private Double quantidade;
+    private String observacao;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

@@ -1,22 +1,25 @@
 package br.com.crispimlanches.backend.entity;
 
-import br.com.crispimlanches.backend.dto.EstadoDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
 @Entity
-@Table(name = "estado")
+@Table(name = "permissao")
 @Data
-public class Estado {
+public class Permissao {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
-    private String sigla;
+
+    private Boolean status = true;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataCriacao;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
-
 }

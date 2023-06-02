@@ -1,12 +1,14 @@
 package br.com.crispimlanches.backend.service;
 
+import br.com.crispimlanches.backend.dto.CidadeDTO;
 import br.com.crispimlanches.backend.entity.Cidade;
 import br.com.crispimlanches.backend.repository.CidadeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
-import java.util.List;
 
 @Service
 public class CidadeService {
@@ -28,7 +30,7 @@ public class CidadeService {
         cidadeRepository.delete(cidade);
     }
 
-    public List<Cidade> listarTodos(){
-        return cidadeRepository.findAll();
+    public Page<CidadeDTO> listarTodos(Pageable paginacao){
+        return cidadeRepository.findAll(paginacao).map(CidadeDTO::new);
     }
 }
