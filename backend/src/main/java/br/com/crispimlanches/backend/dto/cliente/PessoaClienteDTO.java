@@ -6,12 +6,18 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class PessoaClienteDTO {
+
+    private Long id;
+
     @NotBlank
     private String nome;
 
+    @NotBlank
     private String cpf;
 
     @Email

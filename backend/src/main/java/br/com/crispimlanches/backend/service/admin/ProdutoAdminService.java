@@ -19,6 +19,7 @@ public class ProdutoAdminService {
     public Produto inserir(ProdutoAdminDTO produtoAdminDTO){
         Produto produto = new Produto(produtoAdminDTO);
         produto.setDatacriacao(new Date());
+        produto.setStatus(true);
         return produtoRepository.saveAndFlush(produto);
     }
 
@@ -30,7 +31,8 @@ public class ProdutoAdminService {
 
     public void excluir(Long id){
         Produto produto = produtoRepository.findById(id).get();
-        produtoRepository.delete(produto);
+        produto.setStatus(false);
+        produtoRepository.saveAndFlush(produto);
     }
 
     public Page<ProdutoAdminDTO> listarTodos(Pageable pageable){

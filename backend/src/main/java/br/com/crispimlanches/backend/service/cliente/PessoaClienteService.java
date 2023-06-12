@@ -1,12 +1,9 @@
 package br.com.crispimlanches.backend.service.cliente;
 
-import br.com.crispimlanches.backend.dto.PessoaAdminDTO;
 import br.com.crispimlanches.backend.dto.cliente.PessoaClienteDTO;
 import br.com.crispimlanches.backend.entity.Pessoa;
 import br.com.crispimlanches.backend.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;

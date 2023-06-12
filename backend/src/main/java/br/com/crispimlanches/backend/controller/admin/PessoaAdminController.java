@@ -1,9 +1,8 @@
 package br.com.crispimlanches.backend.controller.admin;
 
-import br.com.crispimlanches.backend.dto.PessoaAdminDTO;
+import br.com.crispimlanches.backend.dto.admin.PessoaAdminDTO;
 import br.com.crispimlanches.backend.entity.Pessoa;
 import br.com.crispimlanches.backend.service.admin.PessoaAdminService;
-import br.com.crispimlanches.backend.service.cliente.PessoaClienteService;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

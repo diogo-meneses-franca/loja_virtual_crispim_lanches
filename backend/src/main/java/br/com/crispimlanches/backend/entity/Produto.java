@@ -1,10 +1,8 @@
 package br.com.crispimlanches.backend.entity;
-
 import br.com.crispimlanches.backend.dto.admin.ProdutoAdminDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -13,6 +11,7 @@ import java.util.Date;
 @Table(name = "produto")
 @NoArgsConstructor
 public class Produto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,6 +37,8 @@ public class Produto {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
+
+    private boolean status;
 
     public Produto(ProdutoAdminDTO produtoAdminDTO){
         this.nome = produtoAdminDTO.getNome();

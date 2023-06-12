@@ -1,6 +1,6 @@
 package br.com.crispimlanches.backend.entity;
 
-import br.com.crispimlanches.backend.dto.PessoaAdminDTO;
+import br.com.crispimlanches.backend.dto.admin.PessoaAdminDTO;
 import br.com.crispimlanches.backend.dto.cliente.PessoaClienteDTO;
 import jakarta.persistence.*;
 import lombok.Data;

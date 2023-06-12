@@ -1,38 +1,33 @@
 package br.com.crispimlanches.backend.dto.admin;
-
-import br.com.crispimlanches.backend.dto.CategoriaDTO;
-import br.com.crispimlanches.backend.dto.MarcaDTO;
+import br.com.crispimlanches.backend.dto.cliente.ProdutoClienteDTO;
 import br.com.crispimlanches.backend.entity.Produto;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 import java.math.BigDecimal;
-@Data
-public class ProdutoAdminDTO {
+import java.util.Date;
 
+@Data
+public class ProdutoAdminDTO extends ProdutoClienteDTO {
 
     @NotBlank
-    private String nome;
-
-    private String descricao;
+    private Long id;
 
     @NotBlank
     private BigDecimal valorCusto;
 
-    @NotBlank
-    private BigDecimal valorVenda;
+    private Date dataCriacao;
 
-    private MarcaDTO marca;
+    private Date dataAtualizacao;
 
-    private CategoriaDTO categoria;
+
 
     public ProdutoAdminDTO(Produto produto){
-        this.nome = produto.getNome();
-        this.descricao = produto.getDescricao();
+        super();
+        this.id = produto.getId();
         this.valorCusto = produto.getValorCusto();
-        this.valorVenda = produto.getValorVenda();
-        this.marca = new MarcaDTO(produto.getMarca());
-        this.categoria = new CategoriaDTO(produto.getCategoria());
+        this.dataCriacao = produto.getDatacriacao();
+        this.dataAtualizacao = produto.getDataAtualizacao();
     }
 
 }
