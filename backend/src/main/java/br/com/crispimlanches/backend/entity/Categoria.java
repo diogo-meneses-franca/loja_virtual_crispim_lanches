@@ -1,5 +1,6 @@
 package br.com.crispimlanches.backend.entity;
 
+import br.com.crispimlanches.backend.dto.CategoriaDTO;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,4 +20,8 @@ public class Categoria {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
+
+    public Categoria(CategoriaDTO categoriaDTO){
+        this.nome = categoriaDTO.getNome();
+    }
 }
