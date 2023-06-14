@@ -1,10 +1,8 @@
 package br.com.crispimlanches.backend.dto.cliente;
 
-import br.com.crispimlanches.backend.dto.CidadeDTO;
 import br.com.crispimlanches.backend.entity.Pessoa;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 

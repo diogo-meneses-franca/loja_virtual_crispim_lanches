@@ -17,4 +17,6 @@ public class Cidade extends Auditable {
     @JoinColumn(name ="idEstado")
     private Estado estado;
 
+    private Boolean status;
+
 }

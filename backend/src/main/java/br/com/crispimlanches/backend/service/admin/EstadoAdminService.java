@@ -15,7 +15,6 @@ public class EstadoAdminService {
 
     public Estado inserir(Estado estado){
         estado.setStatus(true);
-        estado.setDataCriacao(new Date());
         return estadoRepository.saveAndFlush(estado);
     }
 
