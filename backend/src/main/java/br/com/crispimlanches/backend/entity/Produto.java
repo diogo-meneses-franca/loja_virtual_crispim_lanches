@@ -10,7 +10,7 @@ import java.util.Date;
 @Data
 @Table(name = "produto")
 @NoArgsConstructor
-public class Produto {
+public class Produto extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,21 +32,15 @@ public class Produto {
     @JoinColumn(name = "idCategoria")
     private Categoria categoria;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date datacriacao;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
-
     private boolean status;
 
     public Produto(ProdutoAdminDTO produtoAdminDTO){
+        super();
         this.nome = produtoAdminDTO.getNome();
         this.descricao = produtoAdminDTO.getDescricao();
         this.valorCusto = produtoAdminDTO.getValorCusto();
         this.valorVenda = produtoAdminDTO.getValorVenda();
         this.marca = new Marca(produtoAdminDTO.getMarca());
         this.categoria = new Categoria(produtoAdminDTO.getCategoria());
-        this.datacriacao = new Date();
     }
 }

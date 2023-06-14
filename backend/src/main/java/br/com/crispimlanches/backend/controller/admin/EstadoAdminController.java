@@ -1,7 +1,7 @@
-package br.com.crispimlanches.backend.controller;
+package br.com.crispimlanches.backend.controller.admin;
 
 import br.com.crispimlanches.backend.entity.Estado;
-import br.com.crispimlanches.backend.service.EstadoService;
+import br.com.crispimlanches.backend.service.admin.EstadoAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,27 +9,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/estado")
-public class EstadoController {
+public class EstadoAdminController {
     @Autowired
-    private EstadoService estadoService;
+    private EstadoAdminService estadoAdminService;
 
     @PostMapping
     public Estado inserir(@RequestBody Estado estado){
-        return estadoService.inserir(estado);
+        return estadoAdminService.inserir(estado);
     }
 
     @PutMapping
     public Estado editar(@RequestBody Estado estado){
-        return estadoService.editar(estado);
+        return estadoAdminService.editar(estado);
     }
 
     @DeleteMapping("/{id}")
      public void excluir(@PathVariable("id") Long id){
-        estadoService.excluir(id);
+        estadoAdminService.excluir(id);
      }
 
     @GetMapping
      public List<Estado> listarTodos(){
-        return estadoService.listarTodos();
+        return estadoAdminService.listarTodos();
      }
 }

@@ -9,7 +9,7 @@ import lombok.Data;
 @Entity
 @Table(name = "endereco")
 @Data
-public class Endereco {
+public class Endereco extends Auditable {
     @Id
     private Long id;
 

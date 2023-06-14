@@ -1,5 +1,4 @@
 package br.com.crispimlanches.backend.entity;
-
 import br.com.crispimlanches.backend.dto.admin.PessoaAdminDTO;
 import br.com.crispimlanches.backend.dto.cliente.PessoaClienteDTO;
 import jakarta.persistence.*;
@@ -12,7 +11,7 @@ import java.util.Date;
 @Data
 @Table(name="pessoa")
 @NoArgsConstructor
-public class Pessoa {
+public class Pessoa extends Auditable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +21,6 @@ public class Pessoa {
     private String cpf;
     private String email;
     private String senha;
-    private Date dataCriacao;
-    private Date dataAtualizacao;
     private boolean status;
     public Pessoa(PessoaClienteDTO pessoaClienteDTO){
         this.nome = pessoaClienteDTO.getNome();

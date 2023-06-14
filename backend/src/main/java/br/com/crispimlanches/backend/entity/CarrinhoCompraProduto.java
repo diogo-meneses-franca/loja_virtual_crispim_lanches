@@ -9,7 +9,7 @@ import java.util.Date;
 @Entity
 @Data
 @Table(name = "carrinhoCompraProduto")
-public class CarrinhoCompraProduto {
+public class CarrinhoCompraProduto extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,9 +18,4 @@ public class CarrinhoCompraProduto {
     private Double quantidade;
     private String observacao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
 }

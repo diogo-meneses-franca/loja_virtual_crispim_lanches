@@ -14,7 +14,7 @@ public class PessoaClienteDTO {
 
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "nome.not.blank")
     private String nome;
 
     @NotBlank

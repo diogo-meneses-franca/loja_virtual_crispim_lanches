@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import java.util.Date;
 
 @Service
@@ -18,7 +17,7 @@ public class ProdutoAdminService {
 
     public Produto inserir(ProdutoAdminDTO produtoAdminDTO){
         Produto produto = new Produto(produtoAdminDTO);
-        produto.setDatacriacao(new Date());
+        produto.setDataCriacao(new Date());
         produto.setStatus(true);
         return produtoRepository.saveAndFlush(produto);
     }

@@ -1,20 +1,20 @@
-package br.com.crispimlanches.backend.service;
+package br.com.crispimlanches.backend.service.admin;
 
 import br.com.crispimlanches.backend.entity.Estado;
 import br.com.crispimlanches.backend.repository.EstadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Date;
 import java.util.List;
 
 @Service
-public class EstadoService {
+public class EstadoAdminService {
     @Autowired
     private EstadoRepository estadoRepository;
 
     public Estado inserir(Estado estado){
+        estado.setStatus(true);
         estado.setDataCriacao(new Date());
         return estadoRepository.saveAndFlush(estado);
     }
@@ -26,7 +26,8 @@ public class EstadoService {
 
     public void excluir(Long id){
         Estado estado = estadoRepository.findById(id).get();
-        estadoRepository.delete(estado);
+        estado.setStatus(false);
+        estadoRepository.saveAndFlush(estado);
     }
 
     public List<Estado> listarTodos(){

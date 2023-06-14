@@ -7,14 +7,11 @@ import java.util.Date;
 @Entity
 @Data
 @Table
-public class Imagem {
+public class Imagem extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String url;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
+
 }

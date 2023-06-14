@@ -10,7 +10,6 @@ import java.util.Date;
 @Data
 public class ProdutoAdminDTO extends ProdutoClienteDTO {
 
-    @NotBlank
     private Long id;
 
     @NotBlank
@@ -26,7 +25,7 @@ public class ProdutoAdminDTO extends ProdutoClienteDTO {
         super();
         this.id = produto.getId();
         this.valorCusto = produto.getValorCusto();
-        this.dataCriacao = produto.getDatacriacao();
+        this.dataCriacao = produto.getDataCriacao();
         this.dataAtualizacao = produto.getDataAtualizacao();
     }
 

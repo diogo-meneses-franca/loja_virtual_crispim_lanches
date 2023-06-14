@@ -7,7 +7,7 @@ import java.util.Date;
 @Entity
 @Table(name = "permissao")
 @Data
-public class Permissao {
+public class Permissao extends Auditable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,4 @@ public class Permissao {
 
     private Boolean status = true;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
 }

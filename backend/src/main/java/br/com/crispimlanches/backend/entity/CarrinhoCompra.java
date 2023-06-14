@@ -2,13 +2,12 @@ package br.com.crispimlanches.backend.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.util.Date;
 
 @Entity
 @Data
 @Table(name = "carrinhoCompra")
-public class CarrinhoCompra {
+public class CarrinhoCompra extends Auditable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,9 +18,5 @@ public class CarrinhoCompra {
     private String observacao;
 
     private String situacao;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
 }
